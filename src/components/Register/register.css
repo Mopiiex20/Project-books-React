@@ -1,0 +1,9 @@
+.head2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.auth{    
+    font-size: 15px;
+}
