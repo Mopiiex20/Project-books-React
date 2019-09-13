@@ -41,12 +41,7 @@ class Profile extends Component<IProfileProps, IProfileState> {
     userId = this.props.user._id;
     token: string = this.props.token;
 
-    toBase64 = (file: any) => new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = error => reject(error);
-    });
+
 
     saveNewName = (user: any) => {
         const { changeName } = this.props;
@@ -59,7 +54,12 @@ class Profile extends Component<IProfileProps, IProfileState> {
 
         // req(`users/:${user._id}`, "PUT", user);
     }
-
+    toBase64 = (file: any) => new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
     async UploadAvatar(user: any) {
         let path: any = document.querySelector("#text-button-file") as HTMLElement;
 
